@@ -1,5 +1,6 @@
 package com.hhh;
 
+import com.hhh.cli.CommandExecutor;
 import com.hhh.model.MainTemplateConfig;
 import freemarker.template.TemplateException;
 
@@ -19,14 +20,7 @@ import static com.hhh.generator.DynamicGenerator.doGenerate;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) throws TemplateException, IOException {
-
-        String projectPath = System.getProperty("user.dir");
-        String inputPath = projectPath + File.separator + "hhh-generator-basic/src/main/resources/templates/MainTemplate.java.ftl";
-        String outputPath = projectPath + File.separator + "MainTemplate.java";
-        MainTemplateConfig mainTemplateConfig = new MainTemplateConfig();
-        mainTemplateConfig.setAuthor("yupi");
-        mainTemplateConfig.setLoop(false);
-        mainTemplateConfig.setOutputText("求和结果：");
-        doGenerate(inputPath, outputPath, mainTemplateConfig);
+        CommandExecutor commandExecutor = new CommandExecutor();
+        commandExecutor.doExecute(args);
     }
 }
