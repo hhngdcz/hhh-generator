@@ -2,7 +2,7 @@ package com.hhh;
 
 /**
 * ACM 输入模板（多数之和）
-* @author: yupi
+* @author: hhngdcz
 */
 
 public class MainTemplate {
